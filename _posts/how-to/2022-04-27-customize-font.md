@@ -4,7 +4,7 @@ title: "[Github Blog] Jekyll 템플릿 폰트 수정"
 description: "Github Blog 한글 문서 가독성 향상을 위해 글꼴을 커스터마이즈 하는 방법 소개"
 date: 2022-04-27
 tags: [github blog, how to, jekyll]
-comments: false
+comments: true
 share: true
 ---
 

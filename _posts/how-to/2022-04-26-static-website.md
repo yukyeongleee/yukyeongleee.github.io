@@ -4,7 +4,7 @@ title: "[Github Blog] Jekyll로 정적 웹사이트(Static Website) 생성"
 description: "Github Blog 구성을 변경하거나 포스팅을 추가할 때 로컬에서 미리보며 작업하는 방법 소개"
 date: 2022-04-26
 tags: [github blog, how to, jekyll]
-comments: false
+comments: true
 share: true
 ---
 

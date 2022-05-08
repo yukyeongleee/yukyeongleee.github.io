@@ -4,7 +4,7 @@ title: "[Linux Server] Anaconda 설치 및 가상환경 관리"
 description: "Linux Server에 Ancaconda 설치 및 가상환경 관리하는 방법 소개"
 date: 2022-05-08
 tags: [anaconda, linux server, how to]
-comments: false
+comments: true
 share: true
 ---
 
