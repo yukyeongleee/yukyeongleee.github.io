@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "[Github blog] Jekyll 템플릿 폰트 수정" 
-description: "Github blog 한글 문서 가독성 향상을 위해 글꼴을 커스터마이즈 하는 방법 소개"
+title: "[Github Blog] Jekyll 템플릿 폰트 수정" 
+description: "Github Blog 한글 문서 가독성 향상을 위해 글꼴을 커스터마이즈 하는 방법 소개"
 date: 2022-04-27
 tags: [github blog, how to, jekyll]
 comments: false
@@ -17,9 +17,9 @@ share: true
 
 3. 오른쪽 상단에 있는 `View selected family` 아이콘을 클릭한다.<br>
 Review를 보면 내가 선택했던 폰트 스타일이 모여있다. 
-![review](/assets/posts/2022-04-27-customize-font/googlefont-review.png)
+![review](/assets/posts/how-to/2022-04-27-customize-font/googlefont-review.png)
 또한 Use on the web에서 웹 폰트를 불러오는데 필요한 HTML 코드를 확인할 수 있다.  
-![usage](/assets/posts/2022-04-27-customize-font/googlefont-usage.png)
+![usage](/assets/posts/how-to/2022-04-27-customize-font/googlefont-usage.png)
 
 4. **(Blueface 템플릿 기준)** `/css/main.css` 파일을 수정해야한다. 다른 템플릿을 사용중이라면 `/_sass/_layout.scss`에서 비슷한 내용을 찾을 수 있을 것이다. <br>
 먼저, 웹 폰트 파일을 불러오는 코드를 삽입한다. 
