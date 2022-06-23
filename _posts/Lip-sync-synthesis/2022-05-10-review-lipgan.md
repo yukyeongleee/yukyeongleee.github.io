@@ -15,12 +15,12 @@ share: true
 최근에 Wav2Lip demo를 돌려보고 있다. Wav2Lip을 소개하는 글을 작성하면서 LipGAN과 SyncNet까지 함께 언급하려던게 분량이 넘쳐버렸다. 그래서 LipGAN 내용을 따로 떼어내서 소개하기로 했다. 논문에서 automatic speech recognition(ASR), neural machine translation(NMT), text-to-speech(TTS)와 관련된 부분은 과감하게 건너뛰었다.
 
 # Contribution
-![pipeline](/assets/posts/face-reenactment/2022-05-10-review-lipgan/pipeline.png)
+![pipeline](/assets/posts/lip-sync-synthesis/2022-05-10-review-lipgan/pipeline.png)
 
 이 논문의 저자들은 어떤 대상이 A 언어로 말하는 영상을 입력받아서 같은 대상이 B 언어로 말하는 영상으로 번역해주는 시스템(**face-to-face translation**)을 만들고 싶어했다. 위의 그림에 그 pipeline이 담겨있다. (1) - (4)단계에서는 이미 개발된 speech-to-speech 번역 시스템을 가져다 사용했고, (5)단계에 있는 visual module을 새로 제안했다.
 
 # Architecture
-![architecture](/assets/posts/face-reenactment/2022-05-10-review-lipgan/architecture.png)
+![architecture](/assets/posts/lip-sync-synthesis/2022-05-10-review-lipgan/architecture.png)
 
 ## Generator
 LipGAN generator는 세 가지 모듈로 이루어져 있다. 
@@ -63,7 +63,7 @@ $$ G^{*} = \arg \min_G \max_D L_a(G, D) + L_{Re} $$
 # Experiments
 LipGAN으로 face-to-face translation 한 결과이다. 비교 대상이었던 모델들보다 입 주변이 뚜렷하고 입 모양의 움직임이 커보인다. 
 
-![result](/assets/posts/face-reenactment/2022-05-10-review-lipgan/result.png)
+![result](/assets/posts/lip-sync-synthesis/2022-05-10-review-lipgan/result.png)
 
 Resolution이 궁금해서 살펴봤더니, LipGAN으로 전달하기 전에 dlib이라는 toolkit을 사용해서 얼굴 영역을 인식(face detection)하고 그 부분을 **96 x 96 x 3**으로 resize했다고 적혀있었다.
 

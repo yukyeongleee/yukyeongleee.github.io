@@ -31,7 +31,7 @@ share: true
 LipGAN의 실패에서 교훈을 얻어 **pretrained expert lip sync discriminator**를 도입했다. 즉, generator와 discriminator를 동시에 학습시키지 않는다. 구조는 lip sync error를 계산하도록 설계된 SyncNet(ACCV 2016)을 변형해서 가져왔다. 
 
 ### SyncNet (ACCV 2016)
-![syncnet-architecture](/assets/posts/face-reenactment/2022-05-11-review-wav2lip/syncnet-architecture.png)
+![syncnet-architecture](/assets/posts/lip-sync-synthesis/2022-05-11-review-wav2lip/syncnet-architecture.png)
 
 SyncNet은 $T_v(=5)$개의 grayscale face frame과 $T_a(=20)$개의 audio frame을 입력받아서 각각을 encoding한다. 그런 다음 두 embedding 사이의 L2 distance를 계산해서 출력한다. 모델을 학습시킬 때는 아래 식처럼 정의된 max-margin loss를 사용했다. 어제 리뷰했던 LipGAN이 SyncNet을 많이 참고한 것 같다.
 
@@ -53,7 +53,7 @@ $$ E_{sync} = \frac {1}{N} \sum_{i=1}{N} -log(P_{sync}^i) $$
 
 # Architecture
 Wav2Lip은 generator와 두 개의 discriminator(expert lip sync, visual quality)로 이루어져있다. Visual quality discriminator는 GAN setup 아래에서 generator와 동시에 학습시킨다.
-![architecture](/assets/posts/face-reenactment/2022-05-11-review-wav2lip/architecture.png)
+![architecture](/assets/posts/lip-sync-synthesis/2022-05-11-review-wav2lip/architecture.png)
 
 - LipGAN의 후속 모델이니만큼 generator를 거의 그대로 가져와서 사용한다. 
 - Visual quality discriminator는 Conv2D가 여러 개 쌓인 단순한 구조를 하고 있다. 앞에서 GAN setup으로 학습시켜서는 audio-lip correspondence가 잘 고려되지 않는다고 언급했는데, 이 discriminator의 역할은 generated frame이 photo-realistic하도록 유도하는 것이라서 상관없다. 
@@ -80,7 +80,7 @@ $$ L_{total} = (1 - s_w - s_g) \cdot L_{recon} + s_w \cdot E_{sync} + s_g \cdot 
 Visual quality discriminator는 조금 전에 설명한 $L_{disc}$를 사용해서 학습시킨다.
 
 # Experiments
-![result](/assets/posts/face-reenactment/2022-05-11-review-wav2lip/result.png)
+![result](/assets/posts/lip-sync-synthesis/2022-05-11-review-wav2lip/result.png)
 각 모델을 사용해서 합성한 결과가 서로 다른 색으로 표시되어 있다.
 - LipGAN → 빨간색 
 - Visual quality discriminator를 사용하지 않은 Wav2Lip → 노란색

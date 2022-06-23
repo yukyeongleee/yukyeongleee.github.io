@@ -36,13 +36,13 @@ Input으로 사용할 이미지는 [This Person Does Not Exist](https://this-per
 왼쪽에서부터 차례대로 (VoxCeleb2-like cropped) input, generated, pose source, mouth source이다. 처음 두 샘플은 input으로 This Person Does Not Exist 사이트에서 다운받은 이미지를 그대로 사용했고, 다른 두 샘플은 toonify 한 다음 사용했다. 
 
 **샘플 A.** 
-![result-1](/assets/posts/face-reenactment/2022-05-24-demo-pc-avs/result-1.gif)
+![result-1](/assets/posts/lip-sync-synthesis/2022-05-24-demo-pc-avs/result-1.gif)
 **샘플 B.**
-![result-2](/assets/posts/face-reenactment/2022-05-24-demo-pc-avs/result-2.gif)
+![result-2](/assets/posts/lip-sync-synthesis/2022-05-24-demo-pc-avs/result-2.gif)
 **샘플 C.**
-![result-3](/assets/posts/face-reenactment/2022-05-24-demo-pc-avs/result-3.gif)
+![result-3](/assets/posts/lip-sync-synthesis/2022-05-24-demo-pc-avs/result-3.gif)
 **샘플 D.**
-![result-4](/assets/posts/face-reenactment/2022-05-24-demo-pc-avs/result-4.gif)
+![result-4](/assets/posts/lip-sync-synthesis/2022-05-24-demo-pc-avs/result-4.gif)
 
 # 고찰
 - Lip sync 결과가 완전 만족스럽다. Wav2Lip으로 합성했던 샘플은 입 모양이 맞는건지 긴가민가했는데 이건 확실하게 맞는 것 같다.
@@ -73,7 +73,7 @@ def get_eyes_mouths(landmark):
     return three_points
 ```
 
-![face-landmarks](/assets/posts/face-reenactment/2022-05-24-demo-pc-avs/face-landmarks.png)
+![face-landmarks](/assets/posts/lip-sync-synthesis/2022-05-24-demo-pc-avs/face-landmarks.png)
 
 전체 영상에서 두 눈과 입의 평균 위치를 계산한다. 그리고 `get_affine` 함수를 호출해서 이 평균 위치를 (87, 59), (137, 59), (112, 120)로 옮기는 Affine transform `M`을 근사한다.  
 
