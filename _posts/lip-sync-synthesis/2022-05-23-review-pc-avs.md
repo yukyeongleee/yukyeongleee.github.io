@@ -99,9 +99,9 @@ $$\mathcal{L}_{vgg} = \sum_{n=1}^{N_P} \| {VGG}_n(I_{(k)}) - {VGG}_n(G(f_{cat(k)
 $$\mathcal{L}_{total} = \mathcal{L}_{GAN} + \lambda_1 \mathcal{L}_{L_1} + \lambda_v \mathcal{L}_{vgg} + \lambda_c \mathcal{L}_c + \lambda_i \mathcal{L}_i$$
 
 # Experiments
-아래 그림은 다른 모델들과 성능을 비교한 결과를 보여준다. 
 
 ## Model Comparison
+아래 그림은 다른 모델들과 성능을 비교한 결과를 보여준다. 
 
 ![model-comparison](/assets/posts/lip-sync-synthesis/2022-05-23-reivew-pc-avs/model-comparison.png)
 
